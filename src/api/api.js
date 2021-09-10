@@ -1,13 +1,27 @@
-export const getAllMissions = async () => {
-    try {
-      let url = "https://api.spacexdata.com/v3/missions";
-      //se usa await debido a que es una funcion asincron y necesitamos que nos responda
-      const response = await fetch(url);
-      //obtener informacion en formato json y es un diccionario de info  que tenemos y esta en un array
-      const data = await response.json();
-      return data;
-    } catch (err) {
-      console.err(err);
+var requestOptions = {
+    method: "GET",
+    redirect: "follow"
+};
+
+const baseUrl ='https://api.spacexdata.com/v3/history'
+export const fetchHistory = async (filters)=>{
+    let url = baseUrl;
+    if(filters.start && filters.end){
+        url += `?start=${filters.start}&end=${filters.end}`;
     }
-  };
+
+
+
+
+
+    try{
+        const response = await fetch (url,requestOptions);
+        const data = await response.json();
+        return data;
+    }
+    catch(err){
+        console.error(err)
+    }
+}
+
   
