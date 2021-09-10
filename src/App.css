@@ -1,11 +1,32 @@
+* {
+  background-color: slateblue;
+}
 .App {
+  font-family: sans-serif;
+  color: black;
+}
+.title {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.input {
+  background-color:darkmagenta;
+  color: black;
+  border: solid 2px
 }
+.btn-button {
+  border: none;
+  padding: 10px 8px;
+  color: black;
+  margin: 10px;
+  background-color: aqua;
+}
+
+.number {
+  font-size: 2rem;
+  color: darkgrey;
+  font-weight: bold;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
